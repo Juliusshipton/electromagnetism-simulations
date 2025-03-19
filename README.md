@@ -19,7 +19,7 @@ git clone https://github.com/Juliusshipton/electromagnetism-simulations.git
 cd electromagnetism-simulations
 ```
 
-### **2️⃣ Installing Dependencies**
+### **2️⃣ Activate the virtual environment**
 
 If you're using `venv`:
 
@@ -29,7 +29,15 @@ source venv/bin/activate
 
 ```
 
-### **3️⃣ Running Simulations**
+### **3️⃣ Installing Dependencies**
+
+```bash
+pip install numpy
+pip install matplotlib
+
+```
+
+### **4️⃣ Running Simulations**
 
 After successfully installing the dependencies, you can run each of the Python scripts in the `src` folder individually by using the following command:
 

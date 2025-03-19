@@ -1,5 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import scipy as sp
+
 
 # Define a grid of points
 x = np.linspace(-5, 5, 20)
