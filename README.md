@@ -15,6 +15,25 @@ This repository contains Python implementations of electromagnetism simulations 
 ### **1️⃣ Clone the Repository**
 
 ```sh
-git clone https://github.com/yo/electromagnetism-simulations.git
+git clone https://github.com/Juliusshipton/electromagnetism-simulations.git
 cd electromagnetism-simulations
+```
+
+### **2️⃣ Installing Dependencies**
+
+If you're using `venv`:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+
+```
+
+### **3️⃣ Running Simulations**
+
+After successfully installing the dependencies, you can run each of the Python scripts in the `src` folder individually by using the following command:
+
+```sh
+cd src
+python electric-field.py
 ```
