@@ -1,4 +1,14 @@
-#!/opt/anaconda3/envs/pmp/bin/python
+'''
+This shabang is the path to where python is installed on your computer
+
+the output of the command 
+
+    which python 
+
+
+'''
+
+#!/Users/juliusshipton/Repos/electromagnetism-simulations/venv/bin/python
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy as sp
