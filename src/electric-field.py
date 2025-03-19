@@ -1,36 +1,34 @@
 '''
-This shabang is the path to where python is installed on your computer
-
-the output of the command 
-
-    which python 
-
-
+To run make sure you pip install all the imports then run ...
+    python electric-field.py
 '''
 
-#!/Users/juliusshipton/Repos/electromagnetism-simulations/venv/bin/python
 import numpy as np
-import matplotlib.pyplot as plt
 import scipy as sp
+import matplotlib.pyplot as plt
 
+params = {
+   'axes.labelsize': 20,
+   'font.size': 20,
+   'figure.figsize': [10, 10]
+   } 
+plt.rcParams.update(params)
 
-# Define a grid of points
-x = np.linspace(-5, 5, 20)
-y = np.linspace(-5, 5, 20)
-X, Y = np.meshgrid(x, y)
+def E(x,y):
+    q= 1 #Charge in coulombs
+    r1 = np.array([0,0]) #Charge set at origin
+    e0= 8.85*10**(-12) #permetivity of free space
+    mag= (q / (4 * np.pi* e0)) * (1 / ((x - r1[0])**2+ (y - r1[1])**2)) #Magnitude of Electric Field Strength
+    ex= mag * ( np.sin(np.arctan2(x,y)))
+    ey= mag * ( np.cos(np.arctan2(x,y)))
+    
+    return (ex,ey)
 
-# Define an electric field from a point charge at the origin
-q = 1  # Charge magnitude
-k = 8.99e9  # Coulomb's constant
+x=np.linspace (-10,10,14)
+y=np.linspace (-10,10,14)
 
-Ex = k * q * X / (X**2 + Y**2)**(3/2)
-Ey = k * q * Y / (X**2 + Y**2)**(3/2)
+x,y=np.meshgrid(x,y)
 
-# Plot the electric field
-plt.figure(figsize=(6, 6))
-plt.quiver(X, Y, Ex, Ey, color='blue', scale=1e10)
-plt.title("Electric Field of a Point Charge")
-plt.xlabel("x-axis")
-plt.ylabel("y-axis")
-plt.grid()
+ex,ey=E(x,y)
+plt.quiver(x,y,ex,ey, scale = 15000000000, color="red")
 plt.show()
